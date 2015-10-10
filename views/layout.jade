@@ -6,4 +6,8 @@ html
 	body
 		header
 			block user
+				| User: #{user.name || user.userId} 
+		block title
+			h1
+				a(href=userPrefix+"/")= title
 		block content

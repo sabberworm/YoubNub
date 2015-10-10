@@ -1,0 +1,9 @@
+extends layout
+
+block content
+	h2 List of all commands
+	for command in commands
+		ul
+		code= command.name
+		| 
+		| #{command.man}

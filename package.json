@@ -17,6 +17,7 @@
     "morgan": "~1.6.1",
     "named-routes": "^2.0.1",
     "serve-favicon": "~2.3.0",
+    "shell-quote": "^1.4.3",
     "stylus": "0.42.3"
   }
 }

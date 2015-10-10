@@ -1,12 +1,11 @@
 extends layout
 
 block content
-	h1= title
 	p Welcome to #{title}
-	form(action="/execute",method="post",enctype="application/x-www-form-urlencoded")
+	form(action=userPrefix+"/execute",method="post",enctype="application/x-www-form-urlencoded")
 		input#search(placeholder="youbnub.local $",name="q")
 
 block user
-	| User: #{user.name || user.userId}
+	| User: #{user.name || user.userId} 
 	if user.userId !== 'global'
-		span(title=user.userId) Remember your user id, it is the token
+		span(title=user.userId) Remember your user id, it is a token
