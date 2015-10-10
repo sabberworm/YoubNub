@@ -1,0 +1,4 @@
+{
+	"database url": "mongodb://localhost:27017/yuppienub",
+	"database options": {"auto_reconnect": true, "native_parser": true}
+}

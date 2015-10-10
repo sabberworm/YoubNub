@@ -5,10 +5,12 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
+var routes = require('./lib/routes/index');
 
 var app = express();
+
+// Config set up
+require('./lib/config')(app);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,8 +23,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+// Static stuff
 var stylus = require('stylus');
-
 var styl = stylus.middleware({
 	src: path.join(__dirname, 'stylus'),
 	dest: path.join(__dirname, 'public', 'stylesheets'),
@@ -33,12 +35,13 @@ var styl = stylus.middleware({
 		.import('jeet');
  }
 });
-
 app.use('/stylesheets/', styl);
 app.use(express.static(path.join(__dirname, 'public')));
 
+// DB
+app.use('/', require('./lib/models')(app, {}));
+
 app.use('/', routes);
-app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
