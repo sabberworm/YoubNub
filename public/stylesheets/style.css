@@ -9,6 +9,10 @@ a {
 h1 {
   text-align: center;
 }
+h1 img {
+  max-width: 90%;
+  height: auto;
+}
 form {
   *zoom: 1;
   width: auto;

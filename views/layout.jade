@@ -9,5 +9,6 @@ html
 				| User: #{user.name || user.userId} 
 		block title
 			h1
-				a(href=userPrefix+"/")= title
+				a(href=userPrefix+"/")
+					img(alt=title, src="/images/logo.svg")
 		block content
