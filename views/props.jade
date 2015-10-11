@@ -1,0 +1,8 @@
+extends layout
+
+block content
+	h2= status
+	dl
+	each descriptor, prop in props
+		dt= descriptor.name
+		dd= object[prop]
