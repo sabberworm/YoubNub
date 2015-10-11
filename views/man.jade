@@ -1,0 +1,11 @@
+extends layout
+
+block content
+	h2= command.name
+	dl
+		dt Command
+		dd= command.name
+		dt Description
+		dd!= md(command.man)
+		dt Text argument
+		dd= command.hasText
