@@ -11,4 +11,7 @@ html
 			h1
 				a(href=userPrefix+"/")
 					img(alt=title, src="/images/logo.svg")
+		block searchfield
+			form(action=userPrefix+"/execute",method="post",enctype="application/x-www-form-urlencoded")
+				input#search(placeholder="youbnub.local $",name="q")
 		block content
