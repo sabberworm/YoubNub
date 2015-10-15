@@ -1,9 +1,14 @@
+.font
+	font: 14px Lato, sans-serif
+
 body
 	background-color white
 	padding: 50px
-	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
+	@extends .font
+
 a
 	color: #00B7FF
+	text-decoration none
 
 h1
 	text-align center
@@ -16,5 +21,32 @@ form
 	input
 		font-size 2rem
 		border 2px solid #eee
+		font-family Hack
+		font-weight 400
 		padding 6px
 		width 100%
+
+logo_height = 60px
+
+header
+	position relative
+	.user-logo
+		position absolute
+		right 0
+
+.user-logo
+	display flex
+	height logo_height
+	line-height logo_height
+	.user-initial
+		width logo_height
+		border-radius (logo_height/2)
+		background rgba(black, 0.4)
+		color white
+		text-align center
+		font-size (logo_height/2)
+		a
+			color inherit
+	.user-name
+		padding-left 1em
+		color black

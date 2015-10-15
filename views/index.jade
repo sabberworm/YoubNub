@@ -2,8 +2,3 @@ extends layout
 
 block content
 	p Welcome to #{title}
-
-block user
-	| User: #{user.name || user.userId} 
-	if user.userId !== 'global'
-		span(title=user.userId) Remember your user id, it is a token

@@ -2,18 +2,23 @@ doctype html
 html
 	head
 		title= title
+		link(rel='stylesheet', href='//cdn.jsdelivr.net/font-hack/2.015/css/hack.min.css')
+		link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic')
 		link(rel='stylesheet', href='/stylesheets/style.css')
 		link(rel='shortcut icon',href="/images/favicon.png")
 		link(rel='shortcut icon mask-icon',href="/images/favicon.svg",color="#FF3D00")
 	body
 		header
 			block user
-				| User: #{user.name || user.userId} 
-		block title
-			h1
-				a(href=userPrefix+"/")
-					img(alt=title, src="/images/logo.svg")
+				div#user-info.user-logo
+					div.user-initial
+						a(href=userPrefix+'/execute?q=user.view -id #{user.userId}')= (user.name || user.userId).substr(0, 1).toUpperCase()
+					span.user-name= user.name || user.userId
+			block title
+				h1
+					a(href=userPrefix+'/')
+						img(alt=title, src="/images/logo.svg")
 		block searchfield
 			form(action=userPrefix+"/execute",method="post",enctype="application/x-www-form-urlencoded")
-				input#search(placeholder="youbnub.local $",name="q")
+				input#search(placeholder="youbnub.local $",name="q",value=prefill)
 		block content

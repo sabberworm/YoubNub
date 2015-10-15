@@ -1,10 +1,14 @@
+.font,
+body {
+  font: 14px Lato, sans-serif;
+}
 body {
   background-color: #fff;
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 a {
   color: #00b7ff;
+  text-decoration: none;
 }
 h1 {
   text-align: center;
@@ -35,6 +39,35 @@ form:after {
 form input {
   font-size: 2rem;
   border: 2px solid #eee;
+  font-family: Hack;
+  font-weight: 400;
   padding: 6px;
   width: 100%;
+}
+header {
+  position: relative;
+}
+header .user-logo {
+  position: absolute;
+  right: 0;
+}
+.user-logo {
+  display: flex;
+  height: 60px;
+  line-height: 60px;
+}
+.user-logo .user-initial {
+  width: 60px;
+  border-radius: 30px;
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  text-align: center;
+  font-size: 30px;
+}
+.user-logo .user-initial a {
+  color: inherit;
+}
+.user-logo .user-name {
+  padding-left: 1em;
+  color: #000;
 }

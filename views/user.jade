@@ -1,0 +1,9 @@
+extends layout
+
+block content
+	h2= status
+	a(href=userPrefix+'/?prefill=user.edit -id #{user.userId}') edit
+	dl
+	each descriptor, prop in props
+		dt= descriptor.name
+		dd= object[prop]
