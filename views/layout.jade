@@ -6,6 +6,7 @@ html
 		link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic')
 		link(rel='stylesheet', href='/stylesheets/style.css')
 		link(rel='shortcut icon',href="/images/favicon.png")
+		link(rel='search',type='application/opensearchdescription+xml',title=title,href=userPrefix+'/opensearch.xml')
 		link(rel='shortcut icon mask-icon',href="/images/favicon.svg",color="#FF3D00")
 	body
 		header
@@ -20,5 +21,5 @@ html
 						img(alt=title, src="/images/logo.svg")
 		block searchfield
 			form(action=userPrefix+"/execute",method="post",enctype="application/x-www-form-urlencoded")
-				input#search(placeholder="youbnub.local $",name="q",value=prefill)
+				input#search(placeholder="#{host} $",name="q",value=prefill)
 		block content
