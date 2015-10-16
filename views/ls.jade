@@ -2,8 +2,9 @@ extends layout
 
 block content
 	h2 List of all commands
-	for command in commands
-		ul
-		code= command.name
-		| 
-		| #{command.man}
+	dl
+		each command in commands
+			dt
+				a(href=userPrefix+'/execute?q=man #{command.name}')
+					code= command.name
+			dd!= md(command.man)
