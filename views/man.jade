@@ -8,6 +8,8 @@ block content
 			code= command.name
 		dt Description
 		dd!= md(command.man)
+		dt Level
+		dd= command.getLevel()
 		if command.hasText || Object.keys(command.argNames).length
 			dt Arguments
 			dd
@@ -19,3 +21,10 @@ block content
 						dt
 							code= name
 						dd= description
+		if aliases.length
+			dt Aliases
+			dd
+				ul
+					each alias in aliases
+						li
+							code= alias
