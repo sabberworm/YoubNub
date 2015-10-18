@@ -6,10 +6,13 @@ block content
 		dt Command
 		dd
 			code= command.name
+		if command.href
+			dt URL
+			dd= command.href
 		dt Description
 		dd!= md(command.man)
 		dt Level
-		dd= command.getLevel()
+		dd= level
 		if command.hasText || Object.keys(command.argNames).length
 			dt Arguments
 			dd
