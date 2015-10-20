@@ -2,12 +2,14 @@ doctype html
 html
 	head
 		title= title
+		link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Ubuntu+Mono')
 		link(rel='stylesheet', href='//cdn.jsdelivr.net/font-hack/2.015/css/hack.min.css')
 		link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic')
 		link(rel='stylesheet', href='/stylesheets/style.css')
 		link(rel='search',type='application/opensearchdescription+xml',title=title,href=userPrefix+'/opensearch.xml')
 		link(rel='shortcut icon mask-icon',href="/images/favicon.svg",color="#FF3D00")
 		link(rel='shortcut icon',href="/images/favicon.png")
+		block scripts
 	body
 		header
 			block user
@@ -20,6 +22,6 @@ html
 					a(href=userPrefix+'/')
 						img(alt=title, src="/images/logo.svg")
 		block searchfield
-			form(action=userPrefix+"/execute",method="post",enctype="application/x-www-form-urlencoded")
+			form.q(action=userPrefix+"/execute",method="post",enctype="application/x-www-form-urlencoded")
 				input#search(placeholder="#{host} $",name="q",value=prefill)
 		block content

@@ -1,0 +1,15 @@
+extends layout
+
+block content
+	if isUpdate
+		h2 Editing user #{edit.name||edit.userId}
+	else
+		h2 Creating new user
+	form
+		input(name='q',value='user.edit',type='hidden')
+		input(name='_id',value=user._id,type='hidden')
+		label(for='id') User ID
+		input(name='id',value=edit.userId)
+		br
+		label(for='name') User name
+		input(id='name',name='name',value=edit.name)
