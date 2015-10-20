@@ -5,11 +5,17 @@ block content
 		h2 Editing user #{edit.name||edit.userId}
 	else
 		h2 Creating new user
-	form
+	form(action=userPrefix+"/execute",method="post",enctype="application/x-www-form-urlencoded")
 		input(name='q',value='user.edit',type='hidden')
-		input(name='_id',value=user._id,type='hidden')
-		label(for='id') User ID
-		input(name='id',value=edit.userId)
+		input(name='post',value='from_edit',type='hidden')
+		input(name='_id',value=edit._id,type='hidden')
+		label(for='userId') User ID
+		input(name='userId',value=edit.userId)
 		br
 		label(for='name') User name
 		input(id='name',name='name',value=edit.name)
+		br
+		label(for='hashedEmail') MD5 hash of email address (for Gravatar)
+		input(id='hashedEmail',name='hashedEmail',value=edit.hashedEmail)
+		br
+		button(type='submit') Save

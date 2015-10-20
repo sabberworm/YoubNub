@@ -70,9 +70,23 @@ header h1 {
   color: #fff;
   text-align: center;
   font-size: 30px;
+  position: relative;
+  overflow: hidden;
+}
+.user-logo .user-initial a,
+.user-logo .user-initial img {
+  position: absolute;
+  left: 0;
+  right: 0;
 }
 .user-logo .user-initial a {
   color: inherit;
+}
+.user-logo .user-initial img {
+  height: auto;
+}
+.user-logo .user-initial img + a {
+  text-shadow: 0px 0px 3px #000;
 }
 .user-logo .user-name {
   padding-left: 1em;

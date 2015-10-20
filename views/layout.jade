@@ -15,6 +15,8 @@ html
 			block user
 				div#user-info.user-logo
 					div.user-initial
+						if user.hashedEmail
+							img(src='//s.gravatar.com/avatar/'+user.hashedEmail+'?s=80')
 						a(href=userPrefix+'/execute?q=user.view -id #{user.userId}')= (user.name || user.userId).substr(0, 1).toUpperCase()
 					span.user-name= user.name || user.userId
 			block title

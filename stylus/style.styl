@@ -51,8 +51,18 @@ header
 		color white
 		text-align center
 		font-size (logo_height/2)
+		position relative
+		overflow hidden
+		a, img
+			position absolute
+			left 0
+			right 0
 		a
 			color inherit
+		img
+			height auto
+			+ a
+				text-shadow 0px 0px 3px black
 	.user-name
 		padding-left 1em
 		color black
