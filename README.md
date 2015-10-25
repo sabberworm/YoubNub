@@ -25,7 +25,7 @@ In addition to the user ID, any user can store a name and an email address hash 
 ## To Do
 
 - [x] Implement internal commands: `man`, `ls`, `preview`
-- [ ] Implement calling external commands
+- [x] Implement calling external commands
 - [ ] Implement URL token parsing
 - [ ] Command editing/creation UI
 - [ ] Choose a frontend framework for more complex UIs
