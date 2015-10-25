@@ -24,12 +24,14 @@ In addition to the user ID, any user can store a name and an email address hash 
 
 ## To Do
 
-[x] Implement internal commands: `man`, `ls`, `preview`
-[ ] Implement calling external commands
-[ ] Implement URL token parsing
-[ ] Command editing/creation UI
-[ ] Choose a frontend framework for more complex UIs
-[ ] Implement alias and env editing in `user.edit` UI
+- [x] Implement internal commands: `man`, `ls`, `preview`
+- [ ] Implement calling external commands
+- [ ] Implement URL token parsing
+- [ ] Command editing/creation UI
+- [ ] Choose a frontend framework for more complex UIs
+- [ ] Implement alias and env editing in `user.edit` UI
+- [ ] Add YubNub command importer script to handle `{ifThen}` cases and the like
+- [ ] Recreate YubNub’s get2post functionality.
 
 ## Installation
 
