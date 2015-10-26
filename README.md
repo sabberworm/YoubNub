@@ -18,7 +18,7 @@ Spiritual successor to YubNub.
 
 ## Users
 
-Users are very light-weight in YoubNub. In fact, visiting `/name` will create a user namespace with an ID of “name” if it does not exist. There are no passwords; to create a user for yourself, choose an unguessable ID or let YoubNub generate one for you with the `user.create` command.
+Users are very light-weight in YoubNub. In fact, visiting `/name` will create a user namespace with an ID of “name” if it does not exist. There are no passwords; to create a user you can keep all to yourself, choose an unguessable ID or let YoubNub generate one for you with the `user.create` command.
 
 In addition to the user ID, any user can store a name and an email address hash (for gravatar images), environment variables and command aliases.
 
