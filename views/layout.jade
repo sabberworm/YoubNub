@@ -12,19 +12,21 @@ html
 		block scripts
 			script(src="/javascripts/main.js")
 	body
-		header
-			block user
-				div#user-info.user-logo
-					div.user-initial
-						if user.hashedEmail
-							img(src='//s.gravatar.com/avatar/'+user.hashedEmail+'?s=80')
-						a(href=userPrefix+'/execute?q=user.view -id #{user.userId}')= (user.name || user.userId).substr(0, 1).toUpperCase()
-					span.user-name= user.name || user.userId
-			block title
-				h1
-					a(href=userPrefix+'/')
-						img(alt=title, src="/images/logo.svg")
-		block searchfield
-			form.q(action=userPrefix+"/execute",method="post",enctype="application/x-www-form-urlencoded")
-				input#search(placeholder="#{host} $",name="q",value=prefill)
-		block content
+		div#top
+			header
+				block user
+					div#user-info.user-logo
+						div.user-initial
+							if user.hashedEmail
+								img(src='//s.gravatar.com/avatar/'+user.hashedEmail+'?s=80')
+							a(href=userPrefix+'/execute?q=user.view -id #{user.userId}')= (user.name || user.userId).substr(0, 1).toUpperCase()
+						span.user-name= user.name || user.userId
+				block title
+					h1
+						a(href=userPrefix+'/')
+							img(alt=title, src="/images/logo.svg")
+			block searchfield
+				form.q(action=userPrefix+"/execute",method="post",enctype="application/x-www-form-urlencoded",accesskey='q',autofocus)
+					input#search(placeholder="#{host} $",name="q",value=prefill)
+		#main
+			block content

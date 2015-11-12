@@ -1,9 +1,14 @@
 .font
 	font: 14px Lato, sans-serif
 
-body
-	background-color white
-	padding: 5px 50px
+dark_bg = (white - 10%)
+text_dark = rgba(black, 0.6)
+text_dark_inactive = rgba(black, 0.4)
+
+html, body
+	background-color dark_bg
+	padding 0
+	margin 0
 	@extends .font
 
 a
@@ -14,16 +19,40 @@ form
 	center(800px)
 	input
 		font-size 1.2rem
-		border 2px solid #eee
+		border 2px solid dark
 		font-family 'Ubuntu Mono'
 		font-weight 400
 		padding 0.2em
 		width 100%
+		color text_dark
+		&::-webkit-input-placeholder
+			color text_dark_inactive
+			opacity 1
+		&:-ms-input-placeholder
+			color text_dark_inactive
+			opacity 1
+		&:-moz-placeholder
+			color text_dark_inactive
+			opacity 1
+		&::-moz-placeholder
+			color text_dark_inactive
+			opacity 1
+		&::placeholder
+			color text_dark_inactive
+			opacity 1
 	&.q
 		input
-			font-size 2rem
+			font-size 2.5rem
 
 logo_height = 60px
+
+#top, #main
+	padding: 5px 50px
+#top
+	background-color white
+	padding-bottom 25px
+// #main
+// 	margin-top logo_height
 
 header
 	position relative
@@ -45,7 +74,7 @@ header
 	.user-initial
 		width logo_height
 		border-radius (logo_height/2)
-		background rgba(black, 0.4)
+		background text_dark_inactive
 		color white
 		text-align center
 		font-size (logo_height/2)
